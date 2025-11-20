@@ -1,12 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Hero from "./components/Hero";
+import Invitation from "./components/Invitation";
+import Journey from "./components/Journey";
+import Quotes from "./components/Quotes";
+import Gallery from "./components/Gallery";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <div >
-     here we are ram
+    <div className="bg-[#FFF7F4] text-gray-800">
+      <Hero />
+      {/* <Invitation />
+      <Journey />
+      <Quotes />
+      <Gallery />
+      <Footer /> */}
     </div>
   );
 }
-
-export default App;
