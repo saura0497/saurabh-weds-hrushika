@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="py-1 bg-pink-100 text-center text-gray-600">
-      <p className="font-[GreatVibes] text-2xl">
+    <footer className="py-2 bg-pink-100 text-center text-gray-600">
+      <p className="font-[GreatVibes] text-xl">
         Thank you for being part of our celebration 💖
       </p>
-      <p className="text-sm mt-2">#SaurabhWedsHrushika</p>
+      <p className="text-sm mt-1">#SaurabhWedsHrushika</p>
     </footer>
   );
 }

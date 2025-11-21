@@ -24,6 +24,7 @@ const albums = {
 
 export default function Gallery() {
   const [selectedAlbum, setSelectedAlbum] = useState("prewedding");
+  const [previewImage, setPreviewImage] = useState(null);
 
   const images = albums[selectedAlbum];
 
@@ -59,56 +60,54 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* PREMIUM COLLAGE GRID */}
+      {/* COLLAGE GRID */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-        {/* 1. Two small squares */}
-        {images[0] && (
-          <div className="h-40 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[0]} className="w-full h-full object-cover hover:scale-105 transition" />
+        {images.map((img, i) => (
+          <div
+            key={i}
+            className="h-40 md:h-48 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30 cursor-pointer"
+            onClick={() => setPreviewImage(img)}
+          >
+            <img
+              src={img}
+              className="w-full h-full object-cover hover:scale-105 transition"
+            />
           </div>
-        )}
-
-        {images[1] && (
-          <div className="h-40 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[1]} className="w-full h-full object-cover hover:scale-105 transition" />
-          </div>
-        )}
-
-        {/* 2. Large tall image */}
-        {images[2] && (
-          <div className="col-span-2 md:col-span-1 md:row-span-2 h-80 md:h-full overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[2]} className="w-full h-full object-cover hover:scale-105 transition" />
-          </div>
-        )}
-
-        {/* 3. Medium squares */}
-        {images[3] && (
-          <div className="h-40 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[3]} className="w-full h-full object-cover hover:scale-105 transition" />
-          </div>
-        )}
-
-        {images[4] && (
-          <div className="h-40 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[4]} className="w-full h-full object-cover hover:scale-105 transition" />
-          </div>
-        )}
-
-        {/* Extra squares if available */}
-        {images[5] && (
-          <div className="h-40 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[5]} className="w-full h-full object-cover hover:scale-105 transition" />
-          </div>
-        )}
-
-        {images[6] && (
-          <div className="h-40 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
-            <img src={images[6]} className="w-full h-full object-cover hover:scale-105 transition" />
-          </div>
-        )}
-
+        ))}
       </div>
+
+      {/* IMAGE PREVIEW MODAL */}
+      {previewImage && (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 animate-fadeIn"
+          onClick={() => setPreviewImage(null)}
+        >
+          <img
+            src={previewImage}
+            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl animate-zoomIn"
+            onClick={(e) => e.stopPropagation()} // prevent close when clicking image
+          />
+        </div>
+      )}
+
+      {/* Small fade/zoom animations */}
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+          from { transform: scale(0.7); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+        .animate-zoomIn {
+          animation: zoomIn 0.3s ease-out;
+        }
+      `}</style>
     </SectionWrapper>
   );
 }
