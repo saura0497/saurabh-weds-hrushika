@@ -5,87 +5,86 @@ const timelineData = [
   {
     year: "April 2025",
     title: "First Meet",
-    description:
-      "The moment we met, something felt different — a quiet spark, a soft beginning.",
-    image: "/images/ss.jpeg", // replace with your image
+    description: "The moment we met, something felt different — a quiet spark, a soft beginning.",
+    image: "/images/ss.jpeg",
   },
   {
     year: "2021",
     title: "Togetherness",
-    description:
-      "Late night talks, long drives, and endless laughter — we grew closer every day.",
+    description: "Late night talks, long drives, and endless laughter — we grew closer every day.",
     image: "/images/together.jpg",
   },
   {
     year: "June 2025",
-    title: "Enagement",
-    description:
-      "A heartfelt yes to a lifetime of love, trust, and beautiful memories.",
+    title: "Engagement",
+    description: "A heartfelt yes to a lifetime of love, trust, and beautiful memories.",
     image: "/images/engagement.jpg",
   },
   {
     year: "October 2025",
     title: "Pre-Wedding",
-    description:
-      "Capturing the love, joy, and magic before stepping into forever.",
+    description: "Capturing the love, joy, and magic before stepping into forever.",
     image: "/images/10 days.JPG",
   },
 ];
 
-const Journey = () => {
+export default function Journey() {
   return (
     <SectionWrapper>
-      <div className="relative max-w-4xl mx-auto z-10">
+      <div className="max-w-4xl mx-auto">
 
-        <h2 className="text-center font-script text-6xl text-gray-900">
-          Our Journey
-        </h2>
-
+        {/* Section heading */}
+        <h2 className="text-center font-script text-6xl text-gray-900">Our Journey</h2>
         <p className="text-center font-serif text-lg text-gray-600 mt-2 mb-12">
           Every moment brought us closer to forever.
         </p>
 
-        <div className="relative border-l-2 border-gray-300 ml-6 md:ml-12">
+        {/* TIMELINE WRAPPER */}
+        <div className="relative">
 
-          {timelineData.map((item, index) => (
-            <div key={index} className="mb-16 relative">
+          {/* Center vertical line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-gray-300"></div>
 
-              {/* Dot */}
-              <div className="w-5 h-5 bg-black rounded-full absolute -left-[13px] top-1.5 border-4 border-white shadow-md"></div>
+          {/* TIMELINE ITEMS */}
+          <div className="space-y-20">
+            {timelineData.map((item, index) => {
+              const isLeft = index % 2 === 0; // alternate on desktop
 
-              {/* Card */}
-              <div className="ml-10 md:ml-14 bg-white/40 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 animate-slideUp">
+              return (
+                <div key={index} className="relative flex flex-col md:flex-row items-center">
+                  
+                  {/* Dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 
+                                  bg-[#c1a875] border-4 border-white rounded-full shadow-md z-20"></div>
 
-                {/* Text */}
-                <h3 className="font-serif text-xl text-gray-700 uppercase tracking-widest">
-                  {item.year}
-                </h3>
+                  {/* CARD */}
+                  <div
+                    className={`
+                      bg-white/50 backdrop-blur-md border border-white/40 rounded-3xl shadow-lg p-6 mt-10
+                      w-full md:w-[45%]
+                      ${isLeft ? "md:mr-auto md:text-right" : "md:ml-auto md:text-left"}
+                    `}
+                    style={{ marginTop: "40px" }}
+                  >
+                    <h3 className="font-serif text-sm tracking-widest uppercase text-gray-600">
+                      {item.year}
+                    </h3>
+                    <h4 className="font-script text-4xl text-gray-900">{item.title}</h4>
+                    <p className="font-serif text-gray-700 mt-2">{item.description}</p>
 
-                <h4 className="font-script text-4xl text-gray-900">
-                  {item.title}
-                </h4>
-
-                <p className="font-serif text-gray-700 mt-2">
-                  {item.description}
-                </p>
-
-                {/* Image */}
-                <div className="mt-4">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-96 object-cover rounded-xl shadow-md"
-                  />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-72 object-cover rounded-xl shadow-md mt-4"
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
 
         </div>
       </div>
     </SectionWrapper>
   );
-};
-
-export default Journey;
-
+}

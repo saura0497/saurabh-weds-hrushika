@@ -44,16 +44,23 @@ export default function VenueSection() {
               <h3 className="text-2xl font-serif font-bold text-gray-800">
                 The Wedding Of Saurabh & Hrushika
               </h3>
-
+  <div className="flex items-center gap-3 text-gray-700">
+                {/* <Clock className="text-[#c1a875]" />
+                <span className="font-serif text-lg">Evening Ceremony</span> */}
+              </div>
+                <div className="flex items-center gap-3 text-gray-700">
+                {/* <Clock className="text-[#c1a875]" />
+                <span className="font-serif text-lg">Evening Ceremony</span> */}
+              </div>  <div className="flex items-center gap-3 text-gray-700">
+                {/* <Clock className="text-[#c1a875]" />
+                <span className="font-serif text-lg">Evening Ceremony</span> */}
+              </div>
               <div className="flex items-center gap-3 text-gray-700">
                 <Calendar className="text-[#c1a875]" />
                 <span className="font-serif text-lg">16 December 2025</span>
               </div>
 
-              <div className="flex items-center gap-3 text-gray-700">
-                <Clock className="text-[#c1a875]" />
-                <span className="font-serif text-lg">Evening Ceremony</span>
-              </div>
+            
 
               <div className="flex items-start gap-3 text-gray-700">
                 <MapPin className="text-[#c1a875] mt-1" />
@@ -68,9 +75,10 @@ export default function VenueSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  inline-block mt-4 px-6 py-3 rounded-xl 
+                  inline-block mt-4 px-4 py-2 rounded-xl 
                   bg-[#c1a875] hover:bg-[#b29660] transition text-white font-serif
-                "
+                    font-medium
+                      "
               >
                 Open in Google Maps
               </a>
