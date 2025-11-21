@@ -12,7 +12,7 @@ const timelineData = [
     year: "2025",
     title: "Togetherness",
     description: "Late night talks, long drives, and endless laughter — we grew closer every day.",
-    image: "/images/6 days.jpg",
+    image: "/images/11 day.jpg",
   },
   {
     year: "June 2025",

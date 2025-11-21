@@ -3,7 +3,7 @@ import SectionWrapper from "../SectionWrapper";
 
 const albums = {
   prewedding: [
-    "/images/1 day.jpg",
+    "/images/1 day.JPG",
     "/images/2 day.jpg",
     "/images/9 days.jpg",
     "/images/11 day.jpg",
