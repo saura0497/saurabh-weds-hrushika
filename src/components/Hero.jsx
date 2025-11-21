@@ -35,9 +35,9 @@ const Hero = () => {
           “Two hearts, one beautiful journey.”
         </p>
 
-        <div className="mt-8 bg-white/20 backdrop-blur-md px-8 py-4 rounded-full border border-white/30 shadow-lg">
-          <p className="font-serif text-lg md:text-2xl tracking-wide">
-            20 February 2025 • Pune
+        <div className="mt-8 bg-white/20 backdrop-blur-md px-8 py-3 rounded-full border border-white/30 shadow-lg">
+          <p className="font-serif text-lg md:text-2xl tracking-wide flex items-center justify-center -py-2">
+            16 December 2025 
           </p>
         </div>
       </div>

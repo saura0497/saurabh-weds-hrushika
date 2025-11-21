@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SectionWrapper from "../SectionWrapper";
 
 const albums = {
   prewedding: [
@@ -25,14 +26,17 @@ export default function Gallery() {
   const [selectedAlbum, setSelectedAlbum] = useState("prewedding");
 
   return (
-    <section id="gallery" className="py-16 bg-[#FAF6EF]">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-
+    // <section id="gallery" className="py-16 bg-[#FAF6EF]">
+    //   <div className="max-w-6xl mx-auto px-6 text-center">
+    <SectionWrapper>
         {/* Title */}
-        <h2 className="text-4xl font-serif font-bold text-gray-800 mb-2">
+        {/* <h2 className="text-4xl font-serif font-bold text-gray-800 mb-2">
           Photo Gallery
+        </h2> */}
+          <h2 className="text-center font-script text-6xl text-gray-900">
+       Photo Gallery
         </h2>
-        <p className="text-gray-500 mb-10 font-light">
+        <p className="text-gray-500 mb-10 font-light flex justify-center mt-2">
           A collection of our cherished moments ✨
         </p>
 
@@ -68,7 +72,8 @@ export default function Gallery() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+    {/* //   </div> */}
+    </SectionWrapper>
+    // </section>
   );
 }

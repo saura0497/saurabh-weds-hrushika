@@ -1,4 +1,5 @@
 import React from "react";
+import SectionWrapper from "../SectionWrapper";
 
 const timelineData = [
   {
@@ -27,26 +28,13 @@ const timelineData = [
     title: "Pre-Wedding",
     description:
       "Capturing the love, joy, and magic before stepping into forever.",
-    image: "/images/10 days.jpg",
+    image: "/images/10 days.JPG",
   },
 ];
 
 const Journey = () => {
   return (
-    <section className="relative w-full py-20 px-6 bg-[#fff9f5]">
-
-      {/* Top Wave */}
-      <svg
-        className="absolute top-0 w-full rotate-180"
-        viewBox="0 0 1440 150"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="#fff9f5"
-          d="M0,96L48,90.7C96,85,192,75,288,90.7C384,107,480,149,576,149.3C672,149,768,107,864,101.3C960,96,1056,128,1152,144C1248,160,1344,160,1392,160L1440,160V0H0Z"
-        />
-      </svg>
-
+    <SectionWrapper>
       <div className="relative max-w-4xl mx-auto z-10">
 
         <h2 className="text-center font-script text-6xl text-gray-900">
@@ -95,8 +83,9 @@ const Journey = () => {
 
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 
 export default Journey;
+

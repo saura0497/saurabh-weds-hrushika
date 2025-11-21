@@ -12,13 +12,13 @@ import VenueSection from "./components/VenueSection";
 
 export default function App() {
   return (
-    <div className="bg-[#FFF7F4] text-gray-800">
+    <div className=" text-gray-800">
       <Hero />
-      <Invitation />
+      {/* <Invitation /> */}
     <Journey />
       
       <Gallery />
-      <CoupleIntro />
+      {/* <CoupleIntro /> */}
       <Countdown />
       {/* <LoveQuotes />
       <RSVP /> */}

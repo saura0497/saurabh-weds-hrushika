@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { MapPin, Calendar, Clock } from "lucide-react";
+import SectionWrapper from "../SectionWrapper";
 
 export default function VenueSection() {
-
   useEffect(() => {
     const els = document.querySelectorAll(".fade-up");
     const io = new IntersectionObserver(
@@ -18,20 +18,15 @@ export default function VenueSection() {
   }, []);
 
   return (
-    <section className="relative py-28 bg-[#FAF6EF]">
-      {/* Floating gold lights */}
-      <div className="absolute inset-0 pointer-events-none opacity-30 animate-slowFloat">
-        <div className="absolute w-72 h-72 bg-[#d4c7a3]/50 rounded-full blur-3xl top-20 left-12"></div>
-        <div className="absolute w-96 h-96 bg-[#c1a875]/40 rounded-full blur-3xl bottom-10 right-10"></div>
-      </div>
-
-      <div className="relative max-w-5xl mx-auto px-6 text-center">
-
+<SectionWrapper>
         {/* Heading */}
-        <h2 className="text-4xl font-serif font-bold text-gray-800 fade-up opacity-0 translate-y-6">
+        {/* <h2 className="text-4xl font-serif font-bold text-gray-800 fade-up opacity-0 translate-y-6">
           Wedding Venue
+        </h2> */}
+          <h2 className="text-center font-script text-6xl text-gray-900">
+       Wedding Venue
         </h2>
-        <p className="text-gray-600 mt-2 fade-up opacity-0 translate-y-6">
+        <p className="text-gray-600 fade-up mt-2 flex justify-center">
           We can’t wait to celebrate this day with you 💛
         </p>
 
@@ -52,7 +47,7 @@ export default function VenueSection() {
 
               <div className="flex items-center gap-3 text-gray-700">
                 <Calendar className="text-[#c1a875]" />
-                <span className="font-serif text-lg">20 February 2025</span>
+                <span className="font-serif text-lg">16 December 2025</span>
               </div>
 
               <div className="flex items-center gap-3 text-gray-700">
@@ -63,14 +58,13 @@ export default function VenueSection() {
               <div className="flex items-start gap-3 text-gray-700">
                 <MapPin className="text-[#c1a875] mt-1" />
                 <span className="font-serif text-lg">
-                  [Place Name]<br />
-                  [City, Area]<br />
-                  [Landmark]
+                  Sati Anusaya Mata Mangal Karyalay<br />
+                  Near City Center, Nagpur, Maharashtra
                 </span>
               </div>
 
               <a
-                href="https://maps.google.com/?q=Your+Location+Name"
+                href="https://maps.app.goo.gl/zBxG1s6eALWP4m4fA?g_st=ipc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
@@ -82,22 +76,21 @@ export default function VenueSection() {
               </a>
             </div>
 
-            {/* Google Map */}
+            {/* Google Map Embed */}
             <div className="rounded-3xl overflow-hidden shadow-lg border border-[#d4c7a3]/40">
               <iframe
                 title="Wedding Venue Map"
-                src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_IFRAME_LINK"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.445085897985!2d78.61872427622785!3d20.758208081666214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd47f3d742aa843%3A0x43273f0dc088bcc3!2sSati%20Anusaya%20Mata%20Mangal%20Karyalay!5e0!3m2!1sen!2sin!4v1700545200000!5m2!1sen!2sin"
                 width="100%"
                 height="300"
-                loading="lazy"
                 className="rounded-3xl"
                 style={{ border: 0 }}
                 allowFullScreen=""
+                loading="lazy"
               ></iframe>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }

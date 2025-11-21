@@ -22,9 +22,9 @@ const Invitation = () => {
         {/* Glass Card */}
         <div className="bg-white/40 backdrop-blur-md border border-white/40 shadow-xl rounded-3xl p-10 animate-fadeUp">
 
-          <p className="font-serif tracking-[6px] uppercase text-sm md:text-lg text-gray-600">
+          {/* <p className="font-serif tracking-[6px] uppercase text-sm md:text-lg text-gray-600">
             You Are Cordially Invited To The Wedding Of
-          </p>
+          </p> */}
 
           <h2 className="font-script text-5xl md:text-7xl text-gray-900 drop-shadow">
             Saurabh & Hrushika
