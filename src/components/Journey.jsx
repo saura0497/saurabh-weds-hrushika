@@ -9,10 +9,10 @@ const timelineData = [
     image: "/images/ss.jpeg",
   },
   {
-    year: "2021",
+    year: "2025",
     title: "Togetherness",
     description: "Late night talks, long drives, and endless laughter — we grew closer every day.",
-    image: "/images/together.jpg",
+    image: "/images/3 days.jpg",
   },
   {
     year: "June 2025",
