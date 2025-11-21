@@ -5,13 +5,13 @@ const timelineData = [
   {
     year: "April 2025",
     title: "First Meet",
-    description: "The moment we met, something felt different — a quiet spark, a soft beginning.",
+    description: "The moment we met, something felt different  a quiet spark, a soft beginning.",
     image: "/images/ss.jpeg",
   },
   {
     year: "2025",
     title: "Togetherness",
-    description: "Late night talks, long drives, and endless laughter — we grew closer every day.",
+    description: "Late night talks, long drives, and endless laughter  we grew closer every day.",
     image: "/images/11 day.jpg",
   },
   {
