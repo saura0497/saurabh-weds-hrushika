@@ -37,7 +37,7 @@ export default function Gallery() {
         A collection of our cherished moments ✨
       </p>
 
-      {/* NEW PREMIUM TABS */}
+      {/* PREMIUM TABS */}
       <div className="flex justify-center gap-4 mb-12 flex-wrap">
         {[
           { key: "prewedding", label: "Pre-Wedding" },
@@ -60,37 +60,79 @@ export default function Gallery() {
         ))}
       </div>
 
-      {/* COLLAGE GRID */}
+      {/* COLLAGE GRID — SAME AS BEFORE */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {images.map((img, i) => (
-          <div
-            key={i}
-            className="h-40 md:h-48 overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30 cursor-pointer"
-            onClick={() => setPreviewImage(img)}
-          >
-            <img
-              src={img}
-              className="w-full h-full object-cover hover:scale-105 transition"
-            />
+
+        {/* small squares */}
+        {images[0] && (
+          <div onClick={() => setPreviewImage(images[0])}
+            className="h-40 overflow-hidden cursor-pointer rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[0]} className="w-full h-full object-cover hover:scale-105 transition" />
           </div>
-        ))}
+        )}
+
+        {images[1] && (
+          <div onClick={() => setPreviewImage(images[1])}
+            className="h-40 overflow-hidden cursor-pointer rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[1]} className="w-full h-full object-cover hover:scale-105 transition" />
+          </div>
+        )}
+
+        {/* tall image */}
+        {images[2] && (
+          <div onClick={() => setPreviewImage(images[2])}
+            className="col-span-2 md:col-span-1 md:row-span-2 h-80 cursor-pointer md:h-full overflow-hidden rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[2]} className="w-full h-full object-cover hover:scale-105 transition" />
+          </div>
+        )}
+
+        {/* medium squares */}
+        {images[3] && (
+          <div onClick={() => setPreviewImage(images[3])}
+            className="h-40 overflow-hidden cursor-pointer rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[3]} className="w-full h-full object-cover hover:scale-105 transition" />
+          </div>
+        )}
+
+        {images[4] && (
+          <div onClick={() => setPreviewImage(images[4])}
+            className="h-40 overflow-hidden cursor-pointer rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[4]} className="w-full h-full object-cover hover:scale-105 transition" />
+          </div>
+        )}
+
+        {/* extra squares */}
+        {images[5] && (
+          <div onClick={() => setPreviewImage(images[5])}
+            className="h-40 overflow-hidden cursor-pointer rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[5]} className="w-full h-full object-cover hover:scale-105 transition" />
+          </div>
+        )}
+
+        {images[6] && (
+          <div onClick={() => setPreviewImage(images[6])}
+            className="h-40 overflow-hidden cursor-pointer rounded-xl bg-white/40 backdrop-blur-sm border border-white/30">
+            <img src={images[6]} className="w-full h-full object-cover hover:scale-105 transition" />
+          </div>
+        )}
+
       </div>
 
-      {/* IMAGE PREVIEW MODAL */}
+      {/* PREVIEW MODAL */}
       {previewImage && (
         <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 animate-fadeIn"
           onClick={() => setPreviewImage(null)}
+          className="fixed inset-0 bg-black/70 backdrop-blur-lg flex items-center justify-center z-50 animate-fadeIn"
         >
           <img
             src={previewImage}
-            className="max-w-[90%] max-h-[90%] rounded-xl shadow-2xl animate-zoomIn"
-            onClick={(e) => e.stopPropagation()} // prevent close when clicking image
+            className="max-w-[90%] max-h-[90vh] rounded-xl shadow-2xl animate-zoomIn"
+            onClick={(e) => e.stopPropagation()} // prevents accidental close
           />
         </div>
       )}
 
-      {/* Small fade/zoom animations */}
+      {/* Animations */}
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; }
@@ -99,7 +141,6 @@ export default function Gallery() {
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
         }
-
         @keyframes zoomIn {
           from { transform: scale(0.7); opacity: 0; }
           to { transform: scale(1); opacity: 1; }
