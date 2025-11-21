@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -49,3 +49,156 @@ code {
 .text-gold {
   color: #e3c07b;
 }
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 1s ease-out;
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 1.5s ease;
+  }
+  .animate-slideUp {
+    animation: slideUp 1.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  .animate-slowFloat {
+    animation: slowFloat 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes slowFloat {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-20px); }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.fade-quote {
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+ */
+
+
+
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts assumed added in public/index.html:
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+*/
+
+:root{
+  --cream: #fff9f5;
+  --cream-2: #FAF6EF;
+  --gold: #C1A875;
+  --gold-soft: #D4C7A3;
+  --text: #222;
+}
+
+/* Global body */
+body {
+  background: var(--cream);
+  color: var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Glassmorphism utilities (reusable) */
+@layer utilities {
+  .glass {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-xl;
+  }
+  .glass-light {
+    @apply bg-white/40 backdrop-blur-md border border-white/40 shadow-lg;
+  }
+  .glass-dark {
+    @apply bg-black/30 backdrop-blur-sm border border-white/10 shadow-lg;
+  }
+
+  .text-script {
+    font-family: "Great Vibes", cursive;
+  }
+  .text-serif {
+    font-family: "Playfair Display", serif;
+  }
+
+  /* small helpers */
+  .soft-gold {
+    color: var(--gold);
+  }
+}
+
+/* Hero zoom animation */
+@keyframes zoomSlow {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+.animate-zoomSlow {
+  animation: zoomSlow 15s ease-out infinite alternate;
+}
+
+/* Fade/Slide animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeUp {
+  animation: fadeUp 0.9s ease forwards;
+}
+@keyframes slowFloat {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-18px); }
+}
+.animate-slowFloat {
+  animation: slowFloat 12s ease-in-out infinite alternate;
+}
+
+/* Quote fade */
+.fade-quote {
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* small responsive helpers */
+@media (max-width: 768px) {
+  .hero-title-sm { font-size: 2.5rem; }
+}
+
+/* wave helper for continuity */
+.wave-bottom { position: absolute; bottom: 0; left: 0; right: 0; }
+
+/* image object fit fallback */
+.img-cover { object-fit: cover; object-position: center; }

@@ -1,0 +1,91 @@
+.invite-wrapper {
+  background: linear-gradient(135deg, #f9f4ff, #fff);
+}
+
+.invite-card {
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  border: 1px solid #e8e8e8;
+}
+
+.invite-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #7a5af8;
+  text-transform: uppercase;
+}
+
+.invite-couple {
+  margin-top: 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.heart {
+  color: crimson;
+  margin: 0 5px;
+  animation: heartbeat 1.4s infinite;
+}
+
+.invite-text {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.invite-details p {
+  font-size: 1rem;
+  color: #444;
+  margin: 6px 0;
+}
+
+.invite-btn {
+  background: #7a5af8;
+  padding: 12px 30px;
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.invite-btn:hover {
+  background: #5934e4;
+}
+
+.line {
+  width: 100px;
+  height: 2px;
+  background: #d3c7ff;
+  margin: 0 auto;
+}
+
+/* Animations */
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease forwards;
+}

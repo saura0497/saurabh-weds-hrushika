@@ -2,12 +2,18 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section
-      className="relative w-full h-screen bg-cover bg-center overflow-hidden animate-zoomSlow"
-      style={{
-        backgroundImage: "url('/images/10 days.JPG')", // your photo here
-      }}
-    >
+    <section className="relative w-full h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute w-full h-full object-cover"
+      >
+        <source src="/images/our-love 2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Dark Cinematic Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70"></div>
@@ -17,7 +23,6 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 text-white">
-        
         <p className="font-serif tracking-[6px] text-sm md:text-lg uppercase opacity-90">
           The Wedding Of
         </p>
@@ -36,18 +41,6 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      {/* Smooth Wave Divider */}
-      <svg
-        className="absolute bottom-0 w-full"
-        viewBox="0 0 1440 150"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill="#fff9f5"
-          d="M0,96L48,90.7C96,85,192,75,288,90.7C384,107,480,149,576,149.3C672,149,768,107,864,101.3C960,96,1056,128,1152,144C1248,160,1344,160,1392,160L1440,160V0H0Z"
-        />
-      </svg>
     </section>
   );
 };
