@@ -6,7 +6,7 @@ const timelineData = [
     year: "April 2025",
     title: "First Meet",
     description: "The moment we met, something felt different  a quiet spark, a soft beginning.",
-    image: "/images/ss.jpeg",
+    image: "/images/dac.jpeg",
   },
   {
     year: "2025",
