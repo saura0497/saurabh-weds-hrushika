@@ -9,7 +9,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/extra" element={<Extra />} />
+      <Route path="/for-her" element={<Extra />} />
     </Routes>
   );
 }

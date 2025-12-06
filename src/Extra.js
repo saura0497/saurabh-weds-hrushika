@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import SectionWrapper from "./SectionWrapper";
 
 export default function ForHer() {
-  const [step, setStep] = useState(8);
+  const [step, setStep] = useState(0);
   const [yesText, setYesText] = useState("");
   const [error, setError] = useState("");
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -517,114 +517,114 @@ export default function ForHer() {
           )}
 
           {/* STEP 8 – final celebration */}
-{step === 8 && (
-  <div className="relative bg-gradient-to-br from-[#ffefe3] via-[#fff9f5] to-[#ffe5f0] backdrop-blur-xl border border-white/70 rounded-3xl shadow-2xl px-6 md:px-10 py-12 animate-fadeIn overflow-hidden">
-    {/* Falling hearts (keep this, you liked it) */}
-    <div className="absolute inset-0 pointer-events-none">
-      {Array.from({ length: 26 }).map((_, i) => (
-        <span
-          key={i}
-          className="absolute text-3xl md:text-4xl animate-bigHearts"
-          style={{
-            left: `${(i * 9) % 100}%`,
-            top: `${(i * 5) % 100}%`,
-            animationDelay: `${i * 0.18}s`,
-          }}
-        >
-          {i % 3 === 0 ? "❤️" : i % 3 === 1 ? "💞" : "💘"}
-        </span>
-      ))}
-    </div>
+            {step === 8 && (
+            <div className="relative bg-gradient-to-br from-[#ffefe3] via-[#fff9f5] to-[#ffe5f0] backdrop-blur-xl border border-white/70 rounded-3xl shadow-2xl px-6 md:px-10 py-12 animate-fadeIn overflow-hidden">
+                {/* Falling hearts (keep this, you liked it) */}
+                <div className="absolute inset-0 pointer-events-none">
+                {Array.from({ length: 26 }).map((_, i) => (
+                    <span
+                    key={i}
+                    className="absolute text-3xl md:text-4xl animate-bigHearts"
+                    style={{
+                        left: `${(i * 9) % 100}%`,
+                        top: `${(i * 5) % 100}%`,
+                        animationDelay: `${i * 0.18}s`,
+                    }}
+                    >
+                    {i % 3 === 0 ? "❤️" : i % 3 === 1 ? "💞" : "💘"}
+                    </span>
+                ))}
+                </div>
 
-    <div className="relative z-10 flex flex-col items-center text-center gap-8">
-      {/* Top title */}
-      <div className="max-w-xl">
-        <p className="font-serif text-xs uppercase tracking-[0.35em] text-gray-600">
-          Secret Level Unlocked
-        </p>
-        <h2 className="font-script text-5xl md:text-6xl text-gray-900 drop-shadow mt-1 animate-popIn">
-          Forever starts now ✨
-        </h2>
-        <p className="mt-3 text-sm md:text-base text-gray-700 font-serif">
-          Iss page ke end tak tum pahuncha gayi ho…  
-          iska matlab ek simple si baat hai:
-          <span className="font-semibold"> tumne mujhe choose kar liya. 🥹</span>
-        </p>
-      </div>
+                <div className="relative z-10 flex flex-col items-center text-center gap-8">
+                {/* Top title */}
+                <div className="max-w-xl">
+                    <p className="font-serif text-xs uppercase tracking-[0.35em] text-gray-600">
+                    Secret Level Unlocked
+                    </p>
+                    <h2 className="font-script text-5xl md:text-6xl text-gray-900 drop-shadow mt-1 animate-popIn">
+                    Forever starts now ✨
+                    </h2>
+                    <p className="mt-3 text-sm md:text-base text-gray-700 font-serif">
+                    Iss page ke end tak tum pahuncha gayi ho…  
+                    iska matlab ek simple si baat hai:
+                    <span className="font-semibold"> tumne mujhe choose kar liya. 🥹</span>
+                    </p>
+                </div>
 
-      {/* Main glass card with new image */}
-      <div className="w-full max-w-3xl">
-        <div className="bg-white/55 backdrop-blur-xl border border-white/70 rounded-3xl shadow-2xl px-4 md:px-8 py-7 md:py-8 flex flex-col md:flex-row items-center gap-6 md:gap-8">
-          {/* Image */}
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-3xl overflow-hidden shadow-xl border-[5px] border-white/80">
-              {/* 👉 change this image if you want another one */}
-              <img
-                src="/images/engagement/eng1.jpg"
-                alt="Us"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                {/* Main glass card with new image */}
+                <div className="w-full max-w-3xl">
+                    <div className="bg-white/55 backdrop-blur-xl border border-white/70 rounded-3xl shadow-2xl px-4 md:px-8 py-7 md:py-8 flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    {/* Image */}
+                    <div className="w-full md:w-1/2 flex justify-center">
+                        <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-3xl overflow-hidden shadow-xl border-[5px] border-white/80">
+                        {/* 👉 change this image if you want another one */}
+                        <img
+                            src="/images/engagement/eng1.jpg"
+                            alt="Us"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                        </div>
+                    </div>
+
+                    {/* Text */}
+                    <div className="w-full md:w-1/2 text-left md:text-left">
+                        <p className="text-xs uppercase tracking-[0.25em] text-gray-500 font-serif">
+                        Official Announcement
+                        </p>
+                        <p className="mt-2 text-lg md:text-xl font-script text-gray-900">
+                        Tum + Main = Hum, officially. 💑
+                        </p>
+                        <p className="mt-3 text-sm md:text-base text-gray-700 font-serif leading-relaxed">
+                        Ab se har plan, har trip, har random “chalo kahin nikalte hain”
+                        moment mein
+                        <span className="font-semibold"> tum automatically included ho.</span>  
+                        Normal din bhi special lagenge, kyunki
+                        <span className="italic"> “meri favourite human”</span> mere saath hogi.
+                        </p>
+
+                        {/* Little “equation” chips */}
+                        <div className="mt-4 flex flex-wrap gap-2 md:gap-3">
+                        <span className="px-3 py-1 rounded-full bg-[#fff3df] text-[11px] md:text-xs font-serif text-gray-800">
+                            Late night talks 🌙
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-[#ffe7f0] text-[11px] md:text-xs font-serif text-gray-800">
+                            Silly fights + quick patchups 😅
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-[#e8f7ff] text-[11px] md:text-xs font-serif text-gray-800">
+                            Long drives + long life 🚗
+                        </span>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                {/* Bold forever line */}
+                <div className="mt-2 max-w-xl">
+                    <p className="text-sm md:text-base font-serif text-gray-800">
+                    Bas ek line yaad rakhna:
+                    <span className="font-semibold">
+                        {" "}jo bhi ho, jahan bhi hoon, mera ghar tum ho. 🤍
+                    </span>
+                    </p>
+                </div>
+
+                {/* Small action at bottom */}
+                <div className="mt-3 flex flex-col items-center gap-2">
+                    <button
+                    onClick={() => setStep(0)}
+                    className="px-8 py-2.5 rounded-full bg-[#c1a875] text-white font-serif text-sm md:text-base shadow-lg hover:bg-[#b29660] transition-transform hover:scale-105"
+                    >
+                    Kabhi hum dono saath baith ke ye page phir se dekhenge 🔁
+                    </button>
+                    {/* <p className="text-[11px] text-gray-500 font-serif">
+                    (Aur us din main phir se tumse bolunga: thank you for saying yes. 🥹)
+                    </p> */}
+                </div>
+                </div>
             </div>
-          </div>
-
-          {/* Text */}
-          <div className="w-full md:w-1/2 text-left md:text-left">
-            <p className="text-xs uppercase tracking-[0.25em] text-gray-500 font-serif">
-              Official Announcement
-            </p>
-            <p className="mt-2 text-lg md:text-xl font-script text-gray-900">
-              Tum + Main = Hum, officially. 💑
-            </p>
-            <p className="mt-3 text-sm md:text-base text-gray-700 font-serif leading-relaxed">
-              Ab se har plan, har trip, har random “chalo kahin nikalte hain”
-              moment mein
-              <span className="font-semibold"> tum automatically included ho.</span>  
-              Normal din bhi special lagenge, kyunki
-              <span className="italic"> “meri favourite human”</span> mere saath hogi.
-            </p>
-
-            {/* Little “equation” chips */}
-            <div className="mt-4 flex flex-wrap gap-2 md:gap-3">
-              <span className="px-3 py-1 rounded-full bg-[#fff3df] text-[11px] md:text-xs font-serif text-gray-800">
-                Late night talks 🌙
-              </span>
-              <span className="px-3 py-1 rounded-full bg-[#ffe7f0] text-[11px] md:text-xs font-serif text-gray-800">
-                Silly fights + quick patchups 😅
-              </span>
-              <span className="px-3 py-1 rounded-full bg-[#e8f7ff] text-[11px] md:text-xs font-serif text-gray-800">
-                Long drives + long life 🚗
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bold forever line */}
-      <div className="mt-2 max-w-xl">
-        <p className="text-sm md:text-base font-serif text-gray-800">
-          Bas ek line yaad rakhna:
-          <span className="font-semibold">
-            {" "}jo bhi ho, jahan bhi hoon, mera ghar tum ho. 🤍
-          </span>
-        </p>
-      </div>
-
-      {/* Small action at bottom */}
-      <div className="mt-3 flex flex-col items-center gap-2">
-        <button
-          onClick={() => setStep(0)}
-          className="px-8 py-2.5 rounded-full bg-[#c1a875] text-white font-serif text-sm md:text-base shadow-lg hover:bg-[#b29660] transition-transform hover:scale-105"
-        >
-          Kabhi hum dono saath baith ke ye page phir se dekhenge 🔁
-        </button>
-        <p className="text-[11px] text-gray-500 font-serif">
-          (Aur us din main phir se tumse bolunga: thank you for saying yes. 🥹)
-        </p>
-      </div>
-    </div>
-  </div>
-)}
+            )}
 
 
         </div>
