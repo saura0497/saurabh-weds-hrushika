@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { MapPin, Calendar, Clock } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 import SectionWrapper from "../SectionWrapper";
 
 export default function VenueSection() {
